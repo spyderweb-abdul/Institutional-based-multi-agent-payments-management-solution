@@ -1,1 +1,1 @@
-# Institutional-based-multi-agent-payments-management-solution
+# Institutional-based multi-agent payments management solution
