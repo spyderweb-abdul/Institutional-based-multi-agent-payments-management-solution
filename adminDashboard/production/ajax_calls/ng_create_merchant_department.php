@@ -1,0 +1,34 @@
+<?php
+session_start();
+
+    include_once '../../../config/connections/constant_connection.php';
+    include_once '../../../config/constant_define/constants.php';
+    include_once '../functions/admin_control_functions.php';
+
+    $data = file_get_contents("php://input");
+    $postData = json_decode($data);
+
+    $facId  = $postData->facid;
+    $merchId = $postData->merchantId;
+    $department = trim_input($postData->department);
+
+
+       //Insert Fee Items
+        $insert_merchant_department = $paydb->query("INSERT INTO ".DEPARTMENT. "(facId, department, merchantId) VALUES ('$facId', '$department', '$merchId') ") or die(mysqli_error($paydb));
+
+                 //$data = "";
+
+            	if($insert_merchant_department == true)
+            	{
+            		$data = 'Department Created Successfully';
+            	}
+                else
+                {
+                	$data =  'Operation Failed. Please try again.';
+                }
+                
+                echo json_encode($data);
+            
+
+
+?>

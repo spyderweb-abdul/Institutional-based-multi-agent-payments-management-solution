@@ -1,0 +1,35 @@
+<?php
+session_start();
+
+    include_once '../../../config/connections/constant_connection.php';
+    include_once '../../../config/constant_define/constants.php';
+    include_once '../functions/admin_control_functions.php';
+
+    $data = file_get_contents("php://input");
+    $postData = json_decode($data);
+
+    $feeItem  = trim_input($postData->feeItem);
+    $amount =   $postData->feeAmount;
+    $scholarship = $postData->reqScholarship;
+    $merchId = $postData->merchantId;
+
+
+       //Insert Fee Items
+        $insert_bulk_fee_item = $paydb->query("INSERT INTO ".FEE_ITEMS. "(feeItem, amount, merchantId, scholarship_applied) VALUES ('$feeItem', '$amount', '$merchId', '$scholarship') ") or die(mysqli_error($paydb));
+
+                 //$data = "";
+
+            	if($insert_bulk_fee_item)
+            	{
+            		$data = 'Fee Items Created Successfully';
+            	}
+                else
+                {
+                	$data =  'Operation Failed. Please try again.';
+                }
+                
+                echo json_encode($data);
+            
+
+
+?>

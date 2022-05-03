@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style type="text/css">
+body,td,th {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+a {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 11px;
+	color: #F90;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #F90;
+}
+a:hover {
+	text-decoration: underline;
+	color: #00F;
+}
+a:active {
+	text-decoration: none;
+	color: #F90;
+}
+
+myText
+{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:12px;
+	color:#003300;
+	font-weight:bold;
+	
+}
+
+</style>
