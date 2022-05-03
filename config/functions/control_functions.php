@@ -172,29 +172,29 @@ try
                $mail->Host = "smtp-relay.gmail.com";  // specify main and backup server
                $mail->SMTPAuth = true;     // turn on SMTP authentication
 
-               $mail->Username = "pgs.notification@udusok.edu.ng";  // SMTP username
-               $mail->Password = "Admin@udu123"; // SMTP password
+               $mail->Username = "somethin@xyz.com";  // SMTP username
+               $mail->Password = "user_password"; // SMTP password
 
-               //$mail->Username = "payment.notification@paytonify.com";  // SMTP username
-               //$mail->Password = "asdf;lkj@2pixreku"; // SMTP password
+               //$mail->Username = "notification@xyz.com";  // SMTP username
+               //$mail->Password = "smtp_password"; // SMTP password
                 //If SMTP requires TLS encryption then set it
                $mail->SMTPSecure = "tls";                           
                //Set TCP port to connect to 
                $mail->Port = 587;
 
-               $mail->From = "pgs.notification@udusok.edu.ng";
+               $mail->From = "notification@xyz.com";
 
-               //$mail->From = "payment.notification@paytonify.com";
-               //$mail->From = "Paytonify";
+               //$mail->From = "notification@xyz.com";
+               //$mail->From = "Sender_Name";
                $mail->AddAddress($b, $a);
-               $mail->AddReplyTo("no-reply@udusok.edu.ng", "No-Reply");
+               $mail->AddReplyTo("no-reply@xyz.com", "No-Reply");
 
                 //$mail->addCC("user.3@ymail.com","User 3");
                 //$mail->addBCC("user.4@in.com","User 4");
 
                 //$mail->WordWrap = 50;                                 // set word wrap to 50 characters
                 //$mail->AddAttachment("/var/tmp/file.tar.gz");         // add attachments
-               // $mail->AddAttachment("PGMANUAL.pdf", "Application-Form-User-Guide");    // optional name
+               // $mail->AddAttachment("MANUAL.pdf", "Application-Form-User-Guide");    // optional name
 
                $mail->AddStringAttachment($pdf_url_string, 'payment_local_invoice.pdf', $encoding = 'base64', $type = 'application/pdf');
 				
@@ -252,15 +252,15 @@ try
                $mail->IsSMTP();    // set mailer to use SMTP
                $mail->Host = "smtp-relay.gmail.com";  // specify main and backup server
                $mail->SMTPAuth = true;     // turn on SMTP authentication
-               $mail->Username = "payment.notification@paytonify.com";  // SMTP username
-               $mail->Password = "asdf;lkj@2pixreku"; // SMTP password
+               $mail->Username = "notification@xyz.com";  // SMTP username
+               $mail->Password = "smtp_password"; // SMTP password
                 //If SMTP requires TLS encryption then set it
                $mail->SMTPSecure = "tls";                           
                //Set TCP port to connect to 
                $mail->Port = 587;     
 
-               $mail->From = "payment.notification@paytonify.com";
-               $mail->FromName = "Paytonify";
+               $mail->From = "notification@xyz.com";
+               $mail->FromName = "Sender_Name";
                $mail->AddAddress($b, $a);
                $mail->AddReplyTo("no-reply@paytonify.com", "No-Reply");
 
@@ -269,7 +269,7 @@ try
 
                 //$mail->WordWrap = 50;                                 // set word wrap to 50 characters
                 //$mail->AddAttachment("/var/tmp/file.tar.gz");         // add attachments
-               // $mail->AddAttachment("PGMANUAL.pdf", "Application-Form-User-Guide");    // optional name
+               // $mail->AddAttachment("MANUAL.pdf", "Application-Form-User-Guide");    // optional name
 				
 				         $mail->IsHTML(true);                                  // set email format to HTML
 
