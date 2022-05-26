@@ -127,10 +127,10 @@ $arr=json_decode($json,true);
        
 	   $msg = 'Notification on the receipt of your payment for '.$descr. '. Your Invoice No. is: '.$orderId. ' Kindly print your UDUS Payment Receipt by verifying on our portal.' ;
 
-		$url = "http://www.udusok.alertng.com/components/com_smsreseller/smsapi.php"; // Our API
-        $url .= "?username=mitsafe"; //your username on our account
-        $url .= "&password=mitsafe"; // your password
-        $url .= "&sender=UDUPAY"; //Sender Name
+	$url = "http://www.abcde.com/components/com_smsreseller/smsapi.php"; // Our API
+        $url .= "?username=usernamehere"; //your username on our account
+        $url .= "&password=userpasshere"; // your password
+        $url .= "&sender=PAY"; //Sender Name
         $url .= "&recipient=".urlencode($phone); // variable that contain gsms number $gsm
         $url .= "&message=".urlencode($msg); // the message above.
         @fopen($url, "r",255);	
@@ -146,10 +146,8 @@ $arr=json_decode($json,true);
 			exit('Not OK');
 		}
 function remita_transaction_details($orderId){
-	//$mert =  "2547916";
-	$mert =  "573566089";
-	//$api_key = "1946";
-	$api_key = "695470";
+	$mert =  "2547916";
+	$api_key = "1946";
 	$mode = "Live";
 	$hash_string = $orderId . $api_key . $mert;
 	$hash = hash('sha512', $hash_string);
