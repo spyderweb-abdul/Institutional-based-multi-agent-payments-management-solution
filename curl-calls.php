@@ -11,7 +11,7 @@ $fields = array('uid' => '2896');
 				$param .= $key . "=" . $value;
 			}
 
-			$request_url = 'https://mis.udusok.edu.ng/student_profile/index.php?';
+			$request_url = 'https://www.domain.com/folder/index.php?';
 			
 			 $phpCurl = curl_init();
 			 //For the request to bypass any SSL verification in case there is any
